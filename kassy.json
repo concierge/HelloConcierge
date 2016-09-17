@@ -1,5 +1,9 @@
-﻿{
-  "name": "HelloKassy",
-  "version": 1.0,
-  "startup": "hello.js"
+{
+  "name": "HelloConcierge",
+  "version": 2.0,
+  "startup": "hello.js",
+  "command": "helloworld",
+  "help": [
+      ["{{commandPrefix}}helloworld", "Says 'hello world'", "Provides a useful example to demonstrate the creation of a Concierge Module. Says 'hello world'."]
+  ]
 }
