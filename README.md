@@ -21,7 +21,7 @@ Once Concierge is started, run the command (assuming default configuration):
 HelloConcierge will be available for immediate use.
 
 #### 3. Install using KPM (git url)
-Once Kassy is started, run the command (assuming default configuration):
+Once Concierge is started, run the command (assuming default configuration):
 ```
 /kpm install https://github.com/concierge/HelloConcierge.git
 ```
