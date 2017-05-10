@@ -1,3 +1,5 @@
+'use strict';
+
 var assert = require('chai').assert,
     Client = require('../../../../test/helpers/client.js'),
     client = null;
