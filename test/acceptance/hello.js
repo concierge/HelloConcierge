@@ -1,29 +1,16 @@
 'use strict';
 
-var assert = require('chai').assert,
-    Client = require('../../../../test/helpers/client.js'),
-    client = null;
+const assert = require('chai').assert,
+    mockApi = new MockApi();
 
-describe('Test hello module', function() {
-    this.timeout(30000);
-    before(function(done) {
-        client = new Client();
-        client.start(done);
-    });
-
-    after(function(done) {
-        if (client !== null) {
-            client.shutdown(done);
-        }
-    });
-
-    describe('/helloworld', function() {
-        it('should print hello', function(done) {
-            client.receiveMessage(function(data, done) {
-                assert.include(data.content, 'hello', 'Did not recieve a hello');
-                done();
+describe('Test hello module', () => {
+    describe('/helloworld', () => {
+        it('should print hello', done => {
+            mockApi.waitForResponse((data, complete) => {
+                assert.include(data[0], 'hello', 'Did not recieve a hello');
+                complete();
             }, done);
-            client.sendMessage('/helloworld');
+            mockApi.mockSendToModules('/helloworld');
         });
     });
 });
